@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/store_nav_graph"
+    app:startDestination="@id/storeFragment">
+
+    <fragment
+        android:id="@+id/storeFragment"
+        android:name="org.ocandroid.nav.fragment.StoreFragment">
+        <action
+            android:id="@+id/action_to_aile"
+            app:destination="@id/storeAileFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storeAileFragment"
+        android:name="org.ocandroid.nav.fragment.StoreAileFragment">
+        <action
+            android:id="@+id/action_to_aile"
+            app:destination="@id/storeAileFragment" />
+        <action
+            android:id="@+id/action_to_backroom"
+            app:destination="@id/storeBackroomFragment" />
+        <argument
+            android:name="number"
+            app:argType="integer"
+            app:nullable="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/storeBackroomFragment"
+        android:name="org.ocandroid.nav.fragment.StoreBackroomFragment">
+    </fragment>
+</navigation>

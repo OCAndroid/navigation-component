@@ -4,10 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import org.ocandroid.nav.databinding.FragmentWorkBinding
 
 class WorkFragment : BindingFragment<FragmentWorkBinding>() {
+
+    private val args: WorkFragmentArgs by navArgs()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,9 +23,7 @@ class WorkFragment : BindingFragment<FragmentWorkBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding?.actionButton?.setOnClickListener {
-            Toast.makeText(context, "No Destination!", Toast.LENGTH_SHORT).show()
+            findNavController().navigate(WorkFragmentDirections.actionToStore())
         }
     }
-
-
 }

@@ -20,7 +20,8 @@ class HomeFragment : BindingFragment<FragmentHomeBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding?.actionButton?.setOnClickListener {
-            findNavController().navigate(HomeFragmentDirections.actionToWork())
+            val destination = HomeFragmentDirections.actionToWork("Android Developer", true)
+            findNavController().navigate(destination)
         }
     }
 }
