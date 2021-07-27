@@ -16,6 +16,11 @@
         android:id="@+id/storeAileFragment"
         android:name="org.ocandroid.nav.fragment.StoreAileFragment">
         <action
+            android:id="@+id/action_to_store"
+            app:destination="@id/storeFragment"
+            app:popUpTo="@id/storeFragment"
+            app:popUpToInclusive="true" />
+        <action
             android:id="@+id/action_to_aile"
             app:destination="@id/storeAileFragment" />
         <action
@@ -29,6 +34,5 @@
 
     <fragment
         android:id="@+id/storeBackroomFragment"
-        android:name="org.ocandroid.nav.fragment.StoreBackroomFragment">
-    </fragment>
+        android:name="org.ocandroid.nav.fragment.StoreBackroomFragment" />
 </navigation>

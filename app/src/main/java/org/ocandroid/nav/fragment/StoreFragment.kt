@@ -7,7 +7,10 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import org.ocandroid.nav.databinding.FragmentStoreBinding
 
+var instanceCount = 1
+
 class StoreFragment : BindingFragment<FragmentStoreBinding>() {
+    var instance: Int = instanceCount++
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,11 +23,18 @@ class StoreFragment : BindingFragment<FragmentStoreBinding>() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding?.run {
+            storeLabel.text = "Welcome to the Store! ($instance)"
+
             val navController = findNavController()
             actionToAile1.setOnClickListener { navController.navigate(StoreFragmentDirections.actionToAile(1)) }
             actionToAile2.setOnClickListener { navController.navigate(StoreFragmentDirections.actionToAile(2)) }
             actionToAile3.setOnClickListener { navController.navigate(StoreFragmentDirections.actionToAile(3)) }
             exitButton.setOnClickListener { navController.popBackStack() }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        instanceCount--
     }
 }

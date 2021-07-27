@@ -36,14 +36,11 @@ class StoreAileFragment : BindingFragment<FragmentStoreAileBinding>() {
             container.setBackgroundColor(ContextCompat.getColor(requireContext(), backgroundColorId))
 
             val navController = findNavController()
+            actionToNextAile.setOnClickListener { navController.navigate(StoreAileFragmentDirections.actionToAile(args.number.inc())) }
             actionToBackroom.setOnClickListener { navController.navigate(StoreAileFragmentDirections.actionToBackroom()) }
+            actionToStore.setOnClickListener { navController.navigate(StoreAileFragmentDirections.actionToStore()) }
             actionToLast.setOnClickListener { navController.popBackStack() }
-            actionPopToHome.setOnClickListener {
-                navController.popBackStack(
-                    R.id.homeFragment,
-                    false
-                )
-            }
+            actionPopToHome.setOnClickListener { navController.popBackStack(R.id.homeFragment, false) }
         }
     }
 }

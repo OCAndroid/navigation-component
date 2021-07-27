@@ -10,36 +10,54 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Welcome to the Aile!"
-        app:layout_constraintBottom_toTopOf="@id/action_to_backroom"
+        app:layout_constraintBottom_toTopOf="@id/action_to_next_aile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/action_to_backroom"
+        android:id="@+id/action_to_next_aile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Backroom!"
+        android:text="Next Aile!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
+        android:id="@+id/action_to_backroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="To Backroom!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_to_next_aile" />
+
+    <Button
         android:id="@+id/action_to_last"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Previous Location!"
+        android:text="Pop!"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/action_to_backroom" />
 
     <Button
-        android:id="@+id/action_pop_to_home"
+        android:id="@+id/action_to_store"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pop Back to Home!"
+        android:text="Pop Up To Store!"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/action_to_last" />
+
+    <Button
+        android:id="@+id/action_pop_to_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pop Up To Home!"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_to_store" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

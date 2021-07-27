@@ -28,6 +28,13 @@
             android:id="@+id/action_to_store"
             app:destination="@id/store_nav_graph" />
 
+        <action
+            android:id="@+id/action_to_store_with_pop_inclusive"
+            app:destination="@id/store_nav_graph"
+            app:popUpTo="@id/workFragment"
+            app:popUpToInclusive="true"
+            />
+
         <argument
             android:name="role"
             app:argType="string"

@@ -22,8 +22,14 @@ class WorkFragment : BindingFragment<FragmentWorkBinding>() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        binding?.actionButton?.setOnClickListener {
-            findNavController().navigate(WorkFragmentDirections.actionToStore())
+        binding?.run {
+            actionButton.setOnClickListener {
+                findNavController().navigate(WorkFragmentDirections.actionToStore())
+            }
+
+            actionButton2.setOnClickListener {
+                findNavController().navigate(WorkFragmentDirections.actionToStoreWithPopInclusive())
+            }
         }
     }
 }
